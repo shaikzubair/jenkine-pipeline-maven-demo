@@ -16,6 +16,11 @@ pipeline {
                 sh "ssh -V"
                 sh "mvn -version"
                 sh "mvn clean install"
+            }
+        }
+
+        stage("Execute"){
+            steps {
                 sh "mvn exec:java"
             }
         }
